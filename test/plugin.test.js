@@ -46,7 +46,24 @@ QUnit.test('registers itself with video.js', function(assert) {
     'videojs-social-media plugin was registered'
   );
 
-  this.player.socialMedia();
+  this.player.socialMedia({links:[
+    {
+      label: "facebook",
+      class: "vjs-icon-facebook",
+      handleClick: function () {
+        console.log('click facebook');
+        //window.open('http://www.facebook.com/sharer.php?u=http://www.guiarte.com/');
+      }
+    },
+    {
+      label: "twitter",
+      class: "vjs-icon-twitter",
+      handleClick: function () {
+        console.log('click twitter');
+        //window.open('http://www.facebook.com/sharer.php?u=http://www.guiarte.com/');
+      }
+    }
+  ]});
 
   // Tick the clock forward enough to trigger the player to be "ready".
   this.clock.tick(2);

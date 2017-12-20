@@ -13,7 +13,7 @@
   </video>
   <ul>
     <li><a href="test/">Run unit tests in browser.</a></li>
-    
+
   </ul>
   <script src="node_modules/es5-shim/es5-shim.js"></script>
   <script src="node_modules/video.js/dist/video.js"></script>
@@ -21,7 +21,24 @@
   <script>
     (function(window, videojs) {
       var player = window.player = videojs('videojs-social-media-player');
-      player.socialMedia();
+      player.socialMedia({links:[
+        {
+          label: "facebook",
+          class: "vjs-icon-facebook",
+          handleClick: function () {
+            console.log('click facebook');
+            //window.open('http://www.facebook.com/sharer.php?u=http://www.guiarte.com/');
+          }
+        },
+        {
+          label: "twitter",
+          class: "vjs-icon-twitter",
+          handleClick: function () {
+            console.log('click twitter');
+            //window.open('http://www.facebook.com/sharer.php?u=http://www.guiarte.com/');
+          }
+        }
+      ]});
     }(window, window.videojs));
   </script>
 </body>

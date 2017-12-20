@@ -1,8 +1,5 @@
 // Sass for videojs-social-media
-
 .video-js {
-
-  // This class is added to the video.js element by the plugin by default.
   .vjs-menu-social {
     position: absolute;
     display: none;
@@ -21,41 +18,48 @@
     background: rgba(0, 0, 0, 0.7);
     height: 100%;
     font-size: 3em;
-  }
-  .vjs-menu-social.show {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-  }
-  .vjs-menu-social span {
-    position: relative;
-    width: 4em;
-    -webkit-transform: translate(50%, 50%);
-    transform: translate(50%, 50%);
-  }
-  .vjs-menu-social span:before {
-    position: absolute;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-pack: center;
-    -ms-flex-pack: center;
-    justify-content: center;
-    -webkit-box-align: center;
-    -ms-flex-align: center;
-    align-items: center;
-    -webkit-transform: translate(-50%, -50%);
-    transform: translate(-50%, -50%);
-    background: gray;
-    height: 2em;
-    width: 2em;
-    border-radius: 25%;
-  }
-  .vjs-menu-social span:hover:before {
-    color: gray;
-    background: #fff;
-    cursor: pointer;
-    border-color: gray;
+
+    &.show {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+    }
+
+    & span {
+      position: relative;
+      width: 4em;
+      -webkit-transform: translate(50%, 50%);
+      transform: translate(50%, 50%);
+
+      &:before {
+        position: absolute;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        justify-content: center;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+        -webkit-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
+        background: gray;
+        height: 2em;
+        width: 2em;
+        border-radius: 25%;
+      }
+      &:hover:before {
+        color: gray;
+        background: #fff;
+        cursor: pointer;
+        border-color: gray;
+      }
+    }
+
+    &:not(.show) + .vjs-button-social:before {
+      content: "\f10f";
+    }
   }
 
   .vjs-menu-social span.vjs-icon-facebook:before {
@@ -64,6 +68,7 @@
   }
   .vjs-menu-social span.vjs-icon-twitter:before {
     background: #0084b4;
+    //background: red;
     border: 3px solid #005f81;
   }
 
@@ -76,14 +81,38 @@
     opacity: 0;
     visibility: hidden;
     cursor: pointer;
-    color: #000858;
+    color: white;
     font-size: 30px;
-    background: #f9f9fd;
+
     width: 30px;
     height: 30px;
     border-radius: 50%;
     padding: 5px;
     box-sizing: content-box;
+
+    &:not(.open):before {
+      content: "\f10f";
+      width: 1em;
+    }
+
+    &.open:before {
+      background: none;
+    }
+
+    &:before {
+      width: 2em;
+      border-radius: 50%;
+      padding: .2em;
+      background: black;
+      content: "\f115";
+      font-family: VideoJS;
+      position: absolute;
+      top:0;
+      left:0;
+    }
+    &:hover:before {
+      color: gray;
+    }
   }
 
   &.vjs-user-inactive .vjs-button-social {
@@ -96,29 +125,9 @@
     visibility: visible;
   }
 
-  .vjs-button-social:not(.open):before {
-    content: "\f10f";
-    width: 1em;
-  }
-  .vjs-button-social:before {
-    width: 2em;
-    border-radius: 50%;
-    background: none;
-    content: "\f115";
-    font-family: VideoJS;
-    position: absolute;
-  }
-  .vjs-button-social:hover:before {
-    color: #000858;
-  }
-
   &.vjs-paused .vjs-button-social {
     opacity: 1;
     visibility: visible;
-  }
-
-  .vjs-menu-social:not(.show) + .vjs-button-social:before {
-    content: "\f10f";
   }
 
 }
