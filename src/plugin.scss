@@ -1,0 +1,124 @@
+// Sass for videojs-social-media
+
+.video-js {
+
+  // This class is added to the video.js element by the plugin by default.
+  .vjs-menu-social {
+    position: absolute;
+    display: none;
+    top: 0;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    height: 100%;
+    font-size: 3em;
+  }
+  .vjs-menu-social.show {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+  .vjs-menu-social span {
+    position: relative;
+    width: 4em;
+    -webkit-transform: translate(50%, 50%);
+    transform: translate(50%, 50%);
+  }
+  .vjs-menu-social span:before {
+    position: absolute;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    background: gray;
+    height: 2em;
+    width: 2em;
+    border-radius: 25%;
+  }
+  .vjs-menu-social span:hover:before {
+    color: gray;
+    background: #fff;
+    cursor: pointer;
+    border-color: gray;
+  }
+
+  .vjs-menu-social span.vjs-icon-facebook:before {
+    background: #3b5998;
+    border: 3px solid #2d4373;
+  }
+  .vjs-menu-social span.vjs-icon-twitter:before {
+    background: #0084b4;
+    border: 3px solid #005f81;
+  }
+
+  .vjs-button-social {
+
+    transition: all .3s;
+    position: absolute;
+    top: .5em;
+    right: .5em;
+    opacity: 0;
+    visibility: hidden;
+    cursor: pointer;
+    color: #000858;
+    font-size: 30px;
+    background: #f9f9fd;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    padding: 5px;
+    box-sizing: content-box;
+  }
+
+  &.vjs-user-inactive .vjs-button-social {
+    opacity: 0;
+    visibility: hidden;
+  }
+
+  &.vjs-user-active .vjs-button-social {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .vjs-button-social:not(.open):before {
+    content: "\f10f";
+    width: 1em;
+  }
+  .vjs-button-social:before {
+    width: 2em;
+    border-radius: 50%;
+    background: none;
+    content: "\f115";
+    font-family: VideoJS;
+    position: absolute;
+  }
+  .vjs-button-social:hover:before {
+    color: #000858;
+  }
+
+  &.vjs-paused .vjs-button-social {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .vjs-menu-social:not(.show) + .vjs-button-social:before {
+    content: "\f10f";
+  }
+
+}
