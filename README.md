@@ -2,6 +2,9 @@
 
 Social media button
 
+![alt text](image.png)
+
+
 ## Installation
 
 ```sh
@@ -22,7 +25,33 @@ This is the simplest case. Get the script in whatever way you prefer and include
 <script>
   var player = videojs('my-video');
 
-  player.socialMedia();
+  player.socialMedia({
+     links: [
+       {
+         name: "facebook",
+         url: "http://www.guiarte.com/"
+       }, {
+         name: "twitter",
+         url: "http://www.guiarte.com/",
+         text: 'Miren este link',
+         hashtags: 'americatv,laranapepe'
+       }, {
+         name: "linkedin",
+         url: "http://www.guiarte.com/",
+         title: 'Miren esta informacion',
+         summary: 'Descripcion de la nota'
+       },{
+         name: "gplus",
+         url: "http://www.guiarte.com/"
+       }, {
+         name: "tumblr",
+         url: "http://www.guiarte.com/",
+       }, {
+         name: "pinterest",
+         url: "http://www.guiarte.com/",
+         summary: 'Descripcion de la nota'
+       }]
+   });
 </script>
 ```
 

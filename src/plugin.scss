@@ -47,13 +47,18 @@
         background: gray;
         height: 2em;
         width: 2em;
-        border-radius: 25%;
+        border-radius: 15%;
+
+        transition: all .2s;
       }
       &:hover:before {
         color: gray;
         background: #fff;
         cursor: pointer;
         border-color: gray;
+        //transform: translate(-50%, -50%) scale(1.05);
+        //-webkit-transform: translate(-50%, -50%) scale(1.05);
+
       }
     }
 
@@ -64,13 +69,34 @@
 
   .vjs-menu-social span.vjs-icon-facebook:before {
     background: #3b5998;
-    border: 3px solid #2d4373;
+    //border: 3px solid #2d4373;
   }
   .vjs-menu-social span.vjs-icon-twitter:before {
     background: #0084b4;
     //background: red;
-    border: 3px solid #005f81;
+    //border: 3px solid #005f81;
   }
+
+  .vjs-menu-social span.vjs-icon-linkedin:before {
+    background: #0077B5;
+    //background: red;
+    //border: 3px solid #005f81;
+  }
+
+  .vjs-menu-social span.vjs-icon-pinterest:before {
+    background: #BD081C;
+  }
+
+  .vjs-menu-social span.vjs-icon-tumblr:before {
+    background: #36465d;
+  }
+
+  .vjs-menu-social span.vjs-icon-gplus:before {
+    background: #d34836;
+  }
+
+
+
 
   .vjs-button-social {
 

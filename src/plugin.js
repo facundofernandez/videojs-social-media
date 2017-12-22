@@ -29,6 +29,8 @@ const onPlayerReady = (player, options) => {
   let menuLinks = new Component(player);
   let CompButton = new Component(player);
 
+  // Create Button
+
   let button = CompButton.createEl('div', {
     className: "vjs-button-social"
   });
@@ -40,36 +42,99 @@ const onPlayerReady = (player, options) => {
 
     e.stopPropagation();
   });
-
   button.addEventListener("touchend", function (e) {
     e.stopPropagation();
   });
 
+
+  // Create Menu
+
   let menu = menuLinks.createEl('div', {
     className: "vjs-menu-social"
   });
-
   menu.addEventListener("touchend", function (e) {
     e.stopPropagation();
   });
 
   for (let elem of links) {
+    createComponentSocial(elem);
+  }
 
+  function createComponentSocial(elem) {
     let item = new Component(player).createEl('span', {
-      className: elem.class
+      className: "vjs-icon-" + elem.name
     });
 
-    item.addEventListener("click", elem.handleClick);
+    let url = "";
 
+    switch (elem.name) {
+      case "facebook":
+        url = 'http://www.facebook.com/sharer.php?u=' + elem.url;
+        break;
+
+      case "gplus":
+        url = 'https://plus.google.com/share?url=' + elem.url;
+        break;
+
+      case "tumblr":
+        url = 'http://tumblr.com/widgets/share/tool?canonicalUrl=' + elem.url;
+        break;
+
+      case "pinterest":
+        url = 'https://pinterest.com/pin/create/button/?url=' + elem.url;
+
+        if (typeof elem.summary !== 'undefined') {
+          url += "&description=" + elem.summary;
+        }
+
+        break;
+      case "twitter":
+        url = 'https://twitter.com/intent/tweet?url=' + elem.url;
+
+        if (typeof elem.text !== 'undefined') {
+          url += "&text=" + elem.text;
+        }
+
+        if (typeof elem.hashtags !== 'undefined') {
+          url += "&hashtags=" + elem.hashtags;
+        }
+
+        break;
+      case "linkedin":
+        url = 'https://www.linkedin.com/shareArticle?mini=true&url=' + elem.url;
+
+        if (typeof elem.title !== 'undefined') {
+          url += "&title=" + elem.title;
+        }
+
+        if (typeof elem.summary !== 'undefined') {
+          url += "&summary=" + elem.summary;
+        }
+
+        break;
+    }
+
+    item.addEventListener("click", function () {
+      window.open(url);
+    });
+    /*
+        player.socialMedia[elem.name] = {
+          button: item,
+          className: "vjs-icon-" + elem.name,
+          setHandleClick: function (handleClick) {
+            item.addEventListener("click", handleClick);
+          }
+        };
+    */
     menu.appendChild(item);
   }
 
   menuLinks.el_ = menu;
-
   CompButton.el_ = button;
 
   player.addChild(menuLinks);
   player.addChild(CompButton);
+
 };
 
 /**
@@ -88,6 +153,7 @@ const socialMedia = function (options) {
   this.ready(() => {
     onPlayerReady(this, videojs.mergeOptions(defaults, options));
   });
+
 };
 
 // Register the plugin with video.js.

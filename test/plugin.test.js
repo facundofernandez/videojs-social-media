@@ -68,8 +68,4 @@ QUnit.test('registers itself with video.js', function(assert) {
   // Tick the clock forward enough to trigger the player to be "ready".
   this.clock.tick(2);
 
-  assert.ok(
-    this.player.hasClass('vjs-social-media'),
-    'the plugin adds a class to the player'
-  );
 });

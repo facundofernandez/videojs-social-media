@@ -7,39 +7,49 @@
   <link href="dist/videojs-social-media.css" rel="stylesheet">
 </head>
 <body>
-  <video id="videojs-social-media-player" class="video-js vjs-default-skin" controls>
-    <source src="//vjs.zencdn.net/v/oceans.mp4" type='video/mp4'>
-    <source src="//vjs.zencdn.net/v/oceans.webm" type='video/webm'>
-  </video>
-  <ul>
-    <li><a href="test/">Run unit tests in browser.</a></li>
+<video id="videojs-social-media-player" class="video-js vjs-default-skin" controls>
+  <source src="//vjs.zencdn.net/v/oceans.mp4" type='video/mp4'>
+  <source src="//vjs.zencdn.net/v/oceans.webm" type='video/webm'>
+</video>
+<ul>
+  <li><a href="test/">Run unit tests in browser.</a></li>
 
-  </ul>
-  <script src="node_modules/es5-shim/es5-shim.js"></script>
-  <script src="node_modules/video.js/dist/video.js"></script>
-  <script src="dist/videojs-social-media.js"></script>
-  <script>
-    (function(window, videojs) {
-      var player = window.player = videojs('videojs-social-media-player');
-      player.socialMedia({links:[
+</ul>
+<script src="node_modules/es5-shim/es5-shim.js"></script>
+<script src="node_modules/video.js/dist/video.js"></script>
+<script src="dist/videojs-social-media.js"></script>
+<script>
+  (function (window, videojs) {
+    var player = window.player = videojs('videojs-social-media-player');
+    player.socialMedia({
+      links: [
         {
-          label: "facebook",
-          class: "vjs-icon-facebook",
-          handleClick: function () {
-            console.log('click facebook');
-            //window.open('http://www.facebook.com/sharer.php?u=http://www.guiarte.com/');
-          }
-        },
-        {
-          label: "twitter",
-          class: "vjs-icon-twitter",
-          handleClick: function () {
-            console.log('click twitter');
-            //window.open('http://www.facebook.com/sharer.php?u=http://www.guiarte.com/');
-          }
-        }
-      ]});
-    }(window, window.videojs));
-  </script>
+          name: "facebook",
+          url: "http://www.guiarte.com/"
+        }, {
+          name: "twitter",
+          url: "http://www.guiarte.com/",
+          text: 'Miren este link',
+          hashtags: 'americatv,laranapepe'
+        }, {
+          name: "linkedin",
+          url: "http://www.guiarte.com/",
+          title: 'Miren esta informacion',
+          summary: 'Descripcion de la nota'
+        },{
+          name: "gplus",
+          url: "http://www.guiarte.com/"
+        }, {
+          name: "tumblr",
+          url: "http://www.guiarte.com/",
+        }, {
+          name: "pinterest",
+          url: "http://www.guiarte.com/",
+          summary: 'Descripcion de la nota'
+        }]
+    });
+
+  }(window, window.videojs));
+</script>
 </body>
 </html>
