@@ -1,6 +1,9 @@
 // Sass for videojs-social-media
 .video-js {
   .vjs-menu-social {
+
+    z-index: 100;
+
     position: absolute;
     display: none;
     top: 0;
@@ -99,6 +102,8 @@
 
 
   .vjs-button-social {
+
+    z-index: 110;
 
     transition: all .3s;
     position: absolute;

@@ -23,36 +23,35 @@ const registerPlugin = videojs.registerPlugin || videojs.plugin;
  *           A plain object containing options for the plugin.
  */
 const onPlayerReady = (player, options) => {
-  //player.addClass('vjs-social-media');
-  let links = options.links;
-  let Component = videojs.getComponent('Component');
-  let menuLinks = new Component(player);
-  let CompButton = new Component(player);
+  // player.addClass('vjs-social-media');
+  const links = options.links;
+  const Component = videojs.getComponent('Component');
+  const menuLinks = new Component(player);
+  const CompButton = new Component(player);
 
   // Create Button
-
-  let button = CompButton.createEl('div', {
-    className: "vjs-button-social"
+  const button = CompButton.createEl('div', {
+    className: 'vjs-button-social'
   });
-  button.addEventListener("click", function (e) {
-    let el = document.getElementsByClassName("vjs-menu-social")[0];
 
-    this.classList.toggle("open");
-    el.classList.toggle("show");
+  button.addEventListener('click', function(e) {
+    const el = document.getElementsByClassName('vjs-menu-social')[0];
 
-    e.stopPropagation();
-  });
-  button.addEventListener("touchend", function (e) {
+    this.classList.toggle('open');
+    el.classList.toggle('show');
     e.stopPropagation();
   });
 
+  button.addEventListener('touchend', function(e) {
+    e.stopPropagation();
+  });
 
   // Create Menu
-
-  let menu = menuLinks.createEl('div', {
-    className: "vjs-menu-social"
+  const menu = menuLinks.createEl('div', {
+    className: 'vjs-menu-social'
   });
-  menu.addEventListener("touchend", function (e) {
+
+  menu.addEventListener('touchend', function(e) {
     e.stopPropagation();
   });
 
@@ -61,71 +60,61 @@ const onPlayerReady = (player, options) => {
   }
 
   function createComponentSocial(elem) {
-    let item = new Component(player).createEl('span', {
-      className: "vjs-icon-" + elem.name
+    const item = new Component(player).createEl('span', {
+      className: 'vjs-icon-' + elem.name
     });
 
-    let url = "";
+    let url = '';
 
     switch (elem.name) {
-      case "facebook":
-        url = 'http://www.facebook.com/sharer.php?u=' + elem.url;
-        break;
+    case 'facebook':
+      url = 'http://www.facebook.com/sharer.php?u=' + elem.url;
+      break;
 
-      case "gplus":
-        url = 'https://plus.google.com/share?url=' + elem.url;
-        break;
+    case 'gplus':
+      url = 'https://plus.google.com/share?url=' + elem.url;
+      break;
 
-      case "tumblr":
-        url = 'http://tumblr.com/widgets/share/tool?canonicalUrl=' + elem.url;
-        break;
+    case 'tumblr':
+      url = 'http://tumblr.com/widgets/share/tool?canonicalUrl=' + elem.url;
+      break;
 
-      case "pinterest":
-        url = 'https://pinterest.com/pin/create/button/?url=' + elem.url;
+    case 'pinterest':
+      url = 'https://pinterest.com/pin/create/button/?url=' + elem.url;
 
-        if (typeof elem.summary !== 'undefined') {
-          url += "&description=" + elem.summary;
-        }
+      if (typeof elem.summary !== 'undefined') {
+        url += '&description=' + elem.summary;
+      }
 
-        break;
-      case "twitter":
-        url = 'https://twitter.com/intent/tweet?url=' + elem.url;
+      break;
+    case 'twitter':
+      url = 'https://twitter.com/intent/tweet?url=' + elem.url;
 
-        if (typeof elem.text !== 'undefined') {
-          url += "&text=" + elem.text;
-        }
+      if (typeof elem.text !== 'undefined') {
+        url += '&text=' + elem.text;
+      }
 
-        if (typeof elem.hashtags !== 'undefined') {
-          url += "&hashtags=" + elem.hashtags;
-        }
+      if (typeof elem.hashtags !== 'undefined') {
+        url += '&hashtags=' + elem.hashtags;
+      }
 
-        break;
-      case "linkedin":
-        url = 'https://www.linkedin.com/shareArticle?mini=true&url=' + elem.url;
+      break;
+    case 'linkedin':
+      url = 'https://www.linkedin.com/shareArticle?mini=true&url=' + elem.url;
 
-        if (typeof elem.title !== 'undefined') {
-          url += "&title=" + elem.title;
-        }
+      if (typeof elem.title !== 'undefined') {
+        url += '&title=' + elem.title;
+      }
 
-        if (typeof elem.summary !== 'undefined') {
-          url += "&summary=" + elem.summary;
-        }
+      if (typeof elem.summary !== 'undefined') {
+        url += '&summary=' + elem.summary;
+      }
 
-        break;
+      break;
     }
+    // window.open(encodeURIComponent(url));
+    item.addEventListener('click', () => window.open(url));
 
-    item.addEventListener("click", function () {
-      window.open(url);
-    });
-    /*
-        player.socialMedia[elem.name] = {
-          button: item,
-          className: "vjs-icon-" + elem.name,
-          setHandleClick: function (handleClick) {
-            item.addEventListener("click", handleClick);
-          }
-        };
-    */
     menu.appendChild(item);
   }
 
@@ -149,11 +138,10 @@ const onPlayerReady = (player, options) => {
  * @param    {Object} [options={}]
  *           An object of options left to the plugin author to define.
  */
-const socialMedia = function (options) {
+const socialMedia = function(options) {
   this.ready(() => {
     onPlayerReady(this, videojs.mergeOptions(defaults, options));
   });
-
 };
 
 // Register the plugin with video.js.
