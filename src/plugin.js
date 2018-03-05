@@ -34,7 +34,7 @@ const onPlayerReady = (player, options) => {
     className: 'vjs-button-social'
   });
 
-  button.addEventListener('click', function(e) {
+  button.addEventListener('click', function (e) {
     const el = document.getElementsByClassName('vjs-menu-social')[0];
 
     this.classList.toggle('open');
@@ -42,7 +42,7 @@ const onPlayerReady = (player, options) => {
     e.stopPropagation();
   });
 
-  button.addEventListener('touchend', function(e) {
+  button.addEventListener('touchend', function (e) {
     e.stopPropagation();
   });
 
@@ -51,7 +51,7 @@ const onPlayerReady = (player, options) => {
     className: 'vjs-menu-social'
   });
 
-  menu.addEventListener('touchend', function(e) {
+  menu.addEventListener('touchend', function (e) {
     e.stopPropagation();
   });
 
@@ -67,50 +67,67 @@ const onPlayerReady = (player, options) => {
     let url = '';
 
     switch (elem.name) {
-    case 'facebook':
-      url = 'http://www.facebook.com/sharer.php?u=' + elem.url;
-      break;
+      case 'facebook':
+        url = 'http://www.facebook.com/sharer.php?u=' + elem.url;
 
-    case 'gplus':
-      url = 'https://plus.google.com/share?url=' + elem.url;
-      break;
+        if (typeof elem.title !== 'undefined') {
+          url += '&title=' + elem.title;
+        }
 
-    case 'tumblr':
-      url = 'http://tumblr.com/widgets/share/tool?canonicalUrl=' + elem.url;
-      break;
+        if (typeof elem.summary !== 'undefined') {
+          url += '&summary=' + elem.summary;
+        }
 
-    case 'pinterest':
-      url = 'https://pinterest.com/pin/create/button/?url=' + elem.url;
+        break;
 
-      if (typeof elem.summary !== 'undefined') {
-        url += '&description=' + elem.summary;
-      }
+      case 'gplus':
+        url = 'https://plus.google.com/share?url=' + elem.url;
+        break;
 
-      break;
-    case 'twitter':
-      url = 'https://twitter.com/intent/tweet?url=' + elem.url;
+      case 'tumblr':
+        url = 'http://tumblr.com/widgets/share/tool?canonicalUrl=' + elem.url;
+        break;
 
-      if (typeof elem.text !== 'undefined') {
-        url += '&text=' + elem.text;
-      }
+      case 'pinterest':
+        url = 'https://pinterest.com/pin/create/button/?url=' + elem.url;
 
-      if (typeof elem.hashtags !== 'undefined') {
-        url += '&hashtags=' + elem.hashtags;
-      }
+        if (typeof elem.summary !== 'undefined') {
+          url += '&description=' + elem.summary;
+        }
 
-      break;
-    case 'linkedin':
-      url = 'https://www.linkedin.com/shareArticle?mini=true&url=' + elem.url;
+        break;
+      case 'twitter':
+        url = 'https://twitter.com/intent/tweet?url=' + elem.url;
 
-      if (typeof elem.title !== 'undefined') {
-        url += '&title=' + elem.title;
-      }
+        if (typeof elem.text !== 'undefined') {
+          url += '&text=' + elem.text;
+        }
 
-      if (typeof elem.summary !== 'undefined') {
-        url += '&summary=' + elem.summary;
-      }
+        if (typeof elem.via !== 'undefined') {
+          url += '&via=' + elem.via;
+        }
 
-      break;
+        if (typeof elem.related !== 'undefined') {
+          url += '&related=' + elem.related;
+        }
+
+        if (typeof elem.hashtags !== 'undefined') {
+          url += '&hashtags=' + elem.hashtags;
+        }
+
+        break;
+      case 'linkedin':
+        url = 'https://www.linkedin.com/shareArticle?mini=true&url=' + elem.url;
+
+        if (typeof elem.title !== 'undefined') {
+          url += '&title=' + elem.title;
+        }
+
+        if (typeof elem.summary !== 'undefined') {
+          url += '&summary=' + elem.summary;
+        }
+
+        break;
     }
     // window.open(encodeURIComponent(url));
     item.addEventListener('click', () => window.open(url));
@@ -138,7 +155,7 @@ const onPlayerReady = (player, options) => {
  * @param    {Object} [options={}]
  *           An object of options left to the plugin author to define.
  */
-const socialMedia = function(options) {
+const socialMedia = function (options) {
   this.ready(() => {
     onPlayerReady(this, videojs.mergeOptions(defaults, options));
   });
