@@ -34,7 +34,8 @@ This is the simplest case. Get the script in whatever way you prefer and include
          name: "twitter",
          url: "http://www.guiarte.com/",
          text: 'Miren este link',
-         hashtags: 'americatv,laranapepe'
+         hashtags: 'americatv,laranapepe',
+         via: 'americatv'
        }, {
          name: "linkedin",
          url: "http://www.guiarte.com/",
