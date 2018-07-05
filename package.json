@@ -45,6 +45,10 @@
     "type": "git",
     "url": "git+https://github.com/facundofernandez/videojs-social-media.git"
   },
+  "homepage": "https://github.com/facundofernandez/videojs-social-media#readme",
+  "bugs": {
+    "url": "https://github.com/facundofernandez/videojs-social-media/issues"
+  },
   "author": "ff.fernandez.facundo <ff.fernandez.facundo@gmail.com>",
   "license": "Apache-2.0",
   "vjsstandard": {
