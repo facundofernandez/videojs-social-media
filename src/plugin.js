@@ -1,4 +1,5 @@
-import {document, window} from 'global';
+import document from 'global/document';
+import window from 'global/window';
 import videojs from 'video.js';
 import {version as VERSION} from '../package.json';
 
