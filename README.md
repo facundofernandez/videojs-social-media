@@ -1,9 +1,16 @@
+
+[npm-icon]: https://nodei.co/npm/videojs-social-media.png?downloads=true&downloadRank=true&stars=true
+
+[npm-link]: https://nodei.co/npm/videojs-social-media/
+
+
 # videojs-social-media
 
 Social media button
 
-![alt text](image.png)
+[![NPM][npm-icon]][npm-link]
 
+![alt text](image.png)
 
 ## Installation
 
