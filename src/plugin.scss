@@ -1,9 +1,7 @@
 // Sass for videojs-social-media
 .video-js {
   .vjs-menu-social {
-
     z-index: 100;
-
     position: absolute;
     display: none;
     top: 0;
@@ -51,17 +49,12 @@
         height: 2em;
         width: 2em;
         border-radius: 15%;
-
         transition: all .2s;
       }
       &:hover:before {
         color: gray;
         background: #fff;
         cursor: pointer;
-        //border-color: gray;
-        //transform: translate(-50%, -50%) scale(1.05);
-        //-webkit-transform: translate(-50%, -50%) scale(1.05);
-
       }
     }
 
@@ -72,18 +65,13 @@
 
   .vjs-menu-social span.vjs-icon-facebook:before {
     background: #3b5998;
-    //border: 3px solid #2d4373;
   }
   .vjs-menu-social span.vjs-icon-twitter:before {
     background: #0084b4;
-    //background: red;
-    //border: 3px solid #005f81;
   }
 
   .vjs-menu-social span.vjs-icon-linkedin:before {
     background: #0077B5;
-    //background: red;
-    //border: 3px solid #005f81;
   }
 
   .vjs-menu-social span.vjs-icon-pinterest:before {
@@ -134,7 +122,7 @@
       width: 2em;
       border-radius: 50%;
       padding: .2em;
-      background: black;
+      //background: black;
       content: "\f115";
       font-family: VideoJS;
       position: absolute;

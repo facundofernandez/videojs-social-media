@@ -41,7 +41,11 @@
     "videojs",
     "videojs-plugin"
   ],
-  "author": "ffernandez <ffernandez@app-con.com>",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/facundofernandez/videojs-social-media.git"
+  },
+  "author": "ff.fernandez.facundo <ff.fernandez.facundo@gmail.com>",
   "license": "Apache-2.0",
   "vjsstandard": {
     "ignore": [
@@ -62,7 +66,7 @@
   ],
   "dependencies": {
     "global": "^4.3.2",
-    "video.js": "^5.19.2"
+    "video.js": "^5.20.5"
   },
   "devDependencies": {
     "babel-plugin-external-helpers": "^6.22.0",
@@ -70,33 +74,33 @@
     "babel-preset-es2015": "^6.14.0",
     "babel-preset-es3": "^1.0.1",
     "bannerize": "^1.0.2",
-    "conventional-changelog-cli": "^1.3.1",
+    "conventional-changelog-cli": "^1.3.22",
     "conventional-changelog-videojs": "^3.0.0",
     "es5-shim": "^4.5.9",
     "husky": "^0.13.3",
     "karma": "~1.3.0",
     "karma-chrome-launcher": "^2.1.1",
-    "karma-detect-browsers": "^2.2.5",
+    "karma-detect-browsers": "^2.3.2",
     "karma-firefox-launcher": "^1.0.1",
     "karma-ie-launcher": "^1.0.0",
     "karma-qunit": "^1.2.1",
     "karma-safari-launcher": "^1.0.0",
     "mkdirp": "^0.5.1",
-    "node-sass": "4.5.3",
+    "node-sass": "^4.9.0",
     "node-static": "^0.7.9",
-    "npm-run-all": "^4.0.2",
+    "npm-run-all": "^4.1.3",
     "qunitjs": "^1.21.0",
     "rimraf": "^2.6.1",
     "rollup": "^0.50.0",
     "rollup-plugin-babel": "^2.7.1",
-    "rollup-plugin-commonjs": "^8.0.2",
-    "rollup-plugin-json": "^2.1.1",
+    "rollup-plugin-commonjs": "^8.4.1",
+    "rollup-plugin-json": "^2.3.1",
     "rollup-plugin-multi-entry": "^2.0.1",
-    "rollup-plugin-node-resolve": "^3.0.0",
+    "rollup-plugin-node-resolve": "^3.3.0",
     "rollup-watch": "^3.2.2",
-    "semver": "^5.3.0",
+    "semver": "^5.5.0",
     "sinon": "^2.2.0",
-    "uglify-js": "^3.0.7",
+    "uglify-js": "^3.4.2",
     "videojs-standard": "^6.0.0"
   }
 }
