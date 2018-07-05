@@ -1,3 +1,4 @@
+import {document, window} from 'global';
 import videojs from 'video.js';
 import {version as VERSION} from '../package.json';
 
@@ -34,7 +35,7 @@ const onPlayerReady = (player, options) => {
     className: 'vjs-button-social'
   });
 
-  button.addEventListener('click', function (e) {
+  button.addEventListener('click', (e) => {
     const el = document.getElementsByClassName('vjs-menu-social')[0];
 
     this.classList.toggle('open');
@@ -42,7 +43,7 @@ const onPlayerReady = (player, options) => {
     e.stopPropagation();
   });
 
-  button.addEventListener('touchend', function (e) {
+  button.addEventListener('touchend', (e) => {
     e.stopPropagation();
   });
 
@@ -51,14 +52,21 @@ const onPlayerReady = (player, options) => {
     className: 'vjs-menu-social'
   });
 
-  menu.addEventListener('touchend', function (e) {
+  menu.addEventListener('touchend', (e) => {
     e.stopPropagation();
   });
 
-  for (let elem of links) {
+  for (const elem of links) {
     createComponentSocial(elem);
   }
 
+  /**
+   * Function to invoke when the player is ready.
+   *
+   * @function createComponentSocial
+   * @param    {json} elem
+   *           json element object.
+   */
   function createComponentSocial(elem) {
     const item = new Component(player).createEl('span', {
       className: 'vjs-icon-' + elem.name
@@ -67,67 +75,67 @@ const onPlayerReady = (player, options) => {
     let url = '';
 
     switch (elem.name) {
-      case 'facebook':
-        url = 'http://www.facebook.com/sharer.php?u=' + elem.url;
+    case 'facebook':
+      url = 'http://www.facebook.com/sharer.php?u=' + elem.url;
 
-        if (typeof elem.title !== 'undefined') {
-          url += '&title=' + elem.title;
-        }
+      if (typeof elem.title !== 'undefined') {
+        url += '&title=' + elem.title;
+      }
 
-        if (typeof elem.summary !== 'undefined') {
-          url += '&summary=' + elem.summary;
-        }
+      if (typeof elem.summary !== 'undefined') {
+        url += '&summary=' + elem.summary;
+      }
 
-        break;
+      break;
 
-      case 'gplus':
-        url = 'https://plus.google.com/share?url=' + elem.url;
-        break;
+    case 'gplus':
+      url = 'https://plus.google.com/share?url=' + elem.url;
+      break;
 
-      case 'tumblr':
-        url = 'http://tumblr.com/widgets/share/tool?canonicalUrl=' + elem.url;
-        break;
+    case 'tumblr':
+      url = 'http://tumblr.com/widgets/share/tool?canonicalUrl=' + elem.url;
+      break;
 
-      case 'pinterest':
-        url = 'https://pinterest.com/pin/create/button/?url=' + elem.url;
+    case 'pinterest':
+      url = 'https://pinterest.com/pin/create/button/?url=' + elem.url;
 
-        if (typeof elem.summary !== 'undefined') {
-          url += '&description=' + elem.summary;
-        }
+      if (typeof elem.summary !== 'undefined') {
+        url += '&description=' + elem.summary;
+      }
 
-        break;
-      case 'twitter':
-        url = 'https://twitter.com/intent/tweet?url=' + elem.url;
+      break;
+    case 'twitter':
+      url = 'https://twitter.com/intent/tweet?url=' + elem.url;
 
-        if (typeof elem.text !== 'undefined') {
-          url += '&text=' + elem.text;
-        }
+      if (typeof elem.text !== 'undefined') {
+        url += '&text=' + elem.text;
+      }
 
-        if (typeof elem.via !== 'undefined') {
-          url += '&via=' + elem.via;
-        }
+      if (typeof elem.via !== 'undefined') {
+        url += '&via=' + elem.via;
+      }
 
-        if (typeof elem.related !== 'undefined') {
-          url += '&related=' + elem.related;
-        }
+      if (typeof elem.related !== 'undefined') {
+        url += '&related=' + elem.related;
+      }
 
-        if (typeof elem.hashtags !== 'undefined') {
-          url += '&hashtags=' + elem.hashtags;
-        }
+      if (typeof elem.hashtags !== 'undefined') {
+        url += '&hashtags=' + elem.hashtags;
+      }
 
-        break;
-      case 'linkedin':
-        url = 'https://www.linkedin.com/shareArticle?mini=true&url=' + elem.url;
+      break;
+    case 'linkedin':
+      url = 'https://www.linkedin.com/shareArticle?mini=true&url=' + elem.url;
 
-        if (typeof elem.title !== 'undefined') {
-          url += '&title=' + elem.title;
-        }
+      if (typeof elem.title !== 'undefined') {
+        url += '&title=' + elem.title;
+      }
 
-        if (typeof elem.summary !== 'undefined') {
-          url += '&summary=' + elem.summary;
-        }
+      if (typeof elem.summary !== 'undefined') {
+        url += '&summary=' + elem.summary;
+      }
 
-        break;
+      break;
     }
     // window.open(encodeURIComponent(url));
     item.addEventListener('click', () => window.open(url));
@@ -155,7 +163,7 @@ const onPlayerReady = (player, options) => {
  * @param    {Object} [options={}]
  *           An object of options left to the plugin author to define.
  */
-const socialMedia = function (options) {
+const socialMedia = function(options) {
   this.ready(() => {
     onPlayerReady(this, videojs.mergeOptions(defaults, options));
   });
