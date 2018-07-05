@@ -39,7 +39,7 @@ const onPlayerReady = (player, options) => {
   button.addEventListener('click', (e) => {
     const el = document.getElementsByClassName('vjs-menu-social')[0];
 
-    this.classList.toggle('open');
+    button.classList.toggle('open');
     el.classList.toggle('show');
     e.stopPropagation();
   });
