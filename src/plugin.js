@@ -25,7 +25,7 @@ const registerPlugin = videojs.registerPlugin || videojs.plugin;
  *           A plain object containing options for the plugin.
  */
 const onPlayerReady = (player, options) => {
-  // player.addClass('vjs-social-media');
+  player.addClass('vjs-social-media');
   const links = options.links;
   const Component = videojs.getComponent('Component');
   const menuLinks = new Component(player);
