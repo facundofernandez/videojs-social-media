@@ -1,6 +1,6 @@
 {
   "name": "videojs-social-media",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "Social media button",
   "main": "dist/videojs-social-media.cjs.js",
   "module": "dist/videojs-social-media.es.js",
