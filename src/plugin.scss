@@ -26,117 +26,64 @@
       display: flex;
     }
 
-    & span {
+    & .vjs-icon {
       position: relative;
-      width: 4em;
-      -webkit-transform: translate(50%, 50%);
-      transform: translate(50%, 50%);
+      height: 2em;
+      width: 2em;
+      margin: 0 1rem 0 0;
+      cursor: pointer;
+      opacity: .8;
+      transition: transform 200ms;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 0.2em;
+      background: #36465d;
 
-      &:before {
-        position: absolute;
-        display: -webkit-box;
-        display: -ms-flexbox;
-        display: flex;
-        -webkit-box-pack: center;
-        -ms-flex-pack: center;
-        justify-content: center;
-        -webkit-box-align: center;
-        -ms-flex-align: center;
-        align-items: center;
-        -webkit-transform: translate(-50%, -50%);
-        transform: translate(-50%, -50%);
-        background: gray;
-        height: 2em;
-        width: 2em;
-        border-radius: 15%;
-        transition: all .2s;
+      &:hover{
+        opacity: 1;
+        transform: scale(1.07);
+        &:before {
+
+        }
       }
-      &:hover:before {
-        color: gray;
-        background: #fff;
-        cursor: pointer;
+
+      &.vjs-icon--facebook {
+        background: #3b5998;
       }
+      &.vjs-icon--twitter{
+        background: #0084b4;
+      }
+      &.vjs-icon--linkedin{
+        background: #0077B5;
+      }
+      &.vjs-icon--pinterest{
+        background: #BD081C;
+      }
+      &.vjs-icon--tumblr{
+        background: #36465d;
+      }
+      &.vjs-icon--link{
+        background: #36465d;
+      }
+
     }
 
-    &:not(.show) + .vjs-button-social:before {
-      content: "\f10f";
-    }
   }
-
-  .vjs-menu-social span.vjs-icon-facebook:before {
-    background: #3b5998;
-  }
-  .vjs-menu-social span.vjs-icon-twitter:before {
-    background: #0084b4;
-  }
-
-  .vjs-menu-social span.vjs-icon-linkedin:before {
-    background: #0077B5;
-  }
-
-  .vjs-menu-social span.vjs-icon-pinterest:before {
-    background: #BD081C;
-  }
-
-  .vjs-menu-social span.vjs-icon-tumblr:before {
-    background: #36465d;
-  }
-
-  .vjs-menu-social span.vjs-icon-gplus:before {
-    background: #d34836;
-  }
-
-
-
 
   .vjs-button-social {
-
     z-index: 110;
-
     transition: all .3s;
     position: absolute;
-    top: .5em;
-    right: .5em;
+    top: 1.5em;
+    right: 1.5em;
     opacity: 0;
     visibility: hidden;
     cursor: pointer;
     color: white;
-    font-size: 30px;
 
-    width: 30px;
-    height: 30px;
-    border-radius: 50%;
     padding: 5px;
     box-sizing: content-box;
-
-    &:not(.open):before {
-      content: "\f10f";
-      width: 1em;
-    }
-
-    &.open:before {
-      background: none;
-    }
-
-    &:before {
-      width: 2em;
-      border-radius: 50%;
-      padding: .2em;
-      //background: black;
-      content: "\f115";
-      font-family: VideoJS;
-      position: absolute;
-      top:0;
-      left:0;
-    }
-    &:hover:before {
-      color: gray;
-    }
-  }
-
-  &.vjs-user-inactive .vjs-button-social {
-    opacity: 0;
-    visibility: hidden;
   }
 
   &.vjs-user-active .vjs-button-social {
@@ -147,6 +94,12 @@
   &.vjs-paused .vjs-button-social {
     opacity: 1;
     visibility: visible;
+  }
+
+  // &.vjs-playing .vjs-button-social,
+  &.vjs-user-inactive .vjs-button-social {
+    opacity: 0;
+    visibility: hidden;
   }
 
 }

@@ -1,0 +1,15 @@
+{
+  "generator-videojs-plugin": {
+    "docs": true,
+    "css": true,
+    "prepush": false,
+    "precommit": true,
+    "lang": true,
+    "license": "apache2",
+    "pluginType": "advanced",
+    "name": "social-media",
+    "author": "ff.fernandez.facundo <ff.fernandez.facundo@gmail.com>",
+    "description": "",
+    "scope": ""
+  }
+}

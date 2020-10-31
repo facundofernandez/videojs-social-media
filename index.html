@@ -22,31 +22,33 @@
   (function (window, videojs) {
     var player = window.player = videojs('videojs-social-media-player');
     player.socialMedia({
-      links: [
-        {
-          name: "facebook",
-          url: "http://www.guiarte.com/"
-        }, {
-          name: "twitter",
-          url: "http://www.guiarte.com/",
-          text: 'Miren este link',
-          hashtags: 'americatv,laranapepe'
-        }, {
-          name: "linkedin",
-          url: "http://www.guiarte.com/",
-          title: 'Miren esta informacion',
-          summary: 'Descripcion de la nota'
-        },{
-          name: "gplus",
-          url: "http://www.guiarte.com/"
-        }, {
-          name: "tumblr",
-          url: "http://www.guiarte.com/",
-        }, {
-          name: "pinterest",
-          url: "http://www.guiarte.com/",
-          summary: 'Descripcion de la nota'
-        }]
+      facebook: {
+        url: "https://www.google.com/"
+      },
+      twitter: {
+        url: "https://www.google.com/",
+        text: 'Miren este link',
+        hashtags: 'americatv,laranapepe'
+      },
+      linkedin: {
+        url: "https://www.google.com/",
+        title: 'Miren esta informacion',
+        summary: 'Descripcion de la nota'
+      },
+      tumblr: {
+        url: "https://www.google.com/",
+      },
+      link: {
+        url: "https://www.google.com/",
+      },
+      pinterest: {
+        url: "https://www.google.com/",
+        summary: 'Descripcion de la nota'
+      },
+      custom: {
+        icon: 'coffee',
+        url: "https://www.google.com/",
+      }
     });
 
   }(window, window.videojs));
