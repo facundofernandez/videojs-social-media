@@ -19638,7 +19638,7 @@ var registerPlugin = videojs.registerPlugin || videojs.plugin;
  */
 var onPlayerReady = function onPlayerReady(player, options) {
   player.addClass('vjs-social-media');
-  var socialItems = options;
+
   var Component = videojs.getComponent('Component');
   var menuLinks = new Component(player);
   var CompButton = new Component(player);
@@ -19680,7 +19680,7 @@ var onPlayerReady = function onPlayerReady(player, options) {
     e.stopPropagation();
   });
 
-  for (var _iterator = Object.keys(socialItems), _isArray = Array.isArray(_iterator), _i = 0, _iterator = _isArray ? _iterator : _iterator[Symbol.iterator]();;) {
+  for (var _iterator = Object.keys(options), _isArray = Array.isArray(_iterator), _i = 0, _iterator = _isArray ? _iterator : _iterator[Symbol.iterator]();;) {
     var _ref;
 
     if (_isArray) {
@@ -19694,7 +19694,7 @@ var onPlayerReady = function onPlayerReady(player, options) {
 
     var socialType = _ref;
 
-    var opt = lodash.merge({ name: socialType }, socialItems[socialType]);
+    var opt = lodash.merge({ type: socialType }, options[socialType]);
     createComponentSocial(opt);
   }
 
@@ -19708,13 +19708,13 @@ var onPlayerReady = function onPlayerReady(player, options) {
   function createComponentSocial(elem) {
 
     var div = new Component(player).createEl('div', {
-      className: 'vjs-icon vjs-icon--' + elem.name
+      className: 'vjs-icon vjs-icon--' + elem.type
     });
 
     var url = '';
     var icon = null;
 
-    switch (elem.name) {
+    switch (elem.type) {
       case 'facebook':
         icon = featherIcons.icons.facebook.toSvg({ 'fill': '#fff', 'stroke-width': 0 });
         url = 'http://www.facebook.com/sharer.php?u=' + elem.url;
@@ -19731,11 +19731,11 @@ var onPlayerReady = function onPlayerReady(player, options) {
 
       case 'tumblr':
         url = 'http://tumblr.com/widgets/share/tool?canonicalUrl=' + elem.url;
-        div.classList.add('vjs-icon-' + elem.name);
+        div.classList.add('vjs-icon-' + elem.type);
         break;
 
       case 'pinterest':
-        div.classList.add('vjs-icon-' + elem.name);
+        div.classList.add('vjs-icon-' + elem.type);
         url = 'https://pinterest.com/pin/create/button/?url=' + elem.url;
 
         if (typeof elem.summary !== 'undefined') {
@@ -19778,11 +19778,6 @@ var onPlayerReady = function onPlayerReady(player, options) {
           url += '&summary=' + elem.summary;
         }
 
-        break;
-
-      case 'link':
-        url = elem.url;
-        icon = featherIcons.icons.link.toSvg({});
         break;
 
       default:

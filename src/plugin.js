@@ -28,7 +28,7 @@ const registerPlugin = videojs.registerPlugin || videojs.plugin;
  */
 const onPlayerReady = (player, options) => {
   player.addClass('vjs-social-media');
-  const socialItems = options
+
   const Component = videojs.getComponent('Component');
   const menuLinks = new Component(player);
   const CompButton = new Component(player);
@@ -70,8 +70,9 @@ const onPlayerReady = (player, options) => {
     e.stopPropagation();
   });
 
-  for (const socialType of Object.keys(socialItems)) {
-    const opt = _.merge({name:socialType},socialItems[socialType] )
+
+  for (const socialType of Object.keys(options)) {
+    const opt = _.merge({type:socialType}, options[socialType] )
     createComponentSocial(opt)
   }
 
@@ -85,13 +86,13 @@ const onPlayerReady = (player, options) => {
   function createComponentSocial(elem) {
 
     const div = new Component(player).createEl('div', {
-      className: 'vjs-icon vjs-icon--' + elem.name
+      className: 'vjs-icon vjs-icon--' + elem.type
     });
 
     let url = '';
     let icon = null;
 
-    switch (elem.name) {
+    switch (elem.type) {
       case 'facebook':
         icon = featherIcons.icons.facebook.toSvg({ 'fill': '#fff' ,'stroke-width':0});
         url = 'http://www.facebook.com/sharer.php?u=' + elem.url;
@@ -106,13 +107,13 @@ const onPlayerReady = (player, options) => {
 
         break;
 
-        case 'tumblr':
+      case 'tumblr':
         url = 'http://tumblr.com/widgets/share/tool?canonicalUrl=' + elem.url;
-        div.classList.add('vjs-icon-'+elem.name)
+        div.classList.add('vjs-icon-'+elem.type)
         break;
 
       case 'pinterest':
-        div.classList.add('vjs-icon-'+elem.name)
+        div.classList.add('vjs-icon-'+elem.type)
         url = 'https://pinterest.com/pin/create/button/?url=' + elem.url;
 
         if (typeof elem.summary !== 'undefined') {
@@ -156,11 +157,6 @@ const onPlayerReady = (player, options) => {
       }
 
       break;
-
-      case 'link':
-        url = elem.url;
-        icon = featherIcons.icons.link.toSvg({  });
-        break;
 
       default: {
         url = elem.url;
