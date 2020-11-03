@@ -1,5 +1,9 @@
+<a name="1.0.1"></a>
+## [1.0.1](https://github.com/facundofernandez/videojs-social-media/compare/v1.0.1) (2020-11-02)
+* Configuration is fixed
+
 <a name="1.0.0"></a>
-## [1.0.0](https://github.com/facundofernandez/videojs-social-media/compare/v0.0.2...v0.0.3) (2020-11-02)
+## [1.0.0](https://github.com/facundofernandez/videojs-social-media/compare/v1.0.0) (2020-11-02)
 * New configuration structure
 * New customizable options
 * Use of 'feather' icons

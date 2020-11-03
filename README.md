@@ -10,7 +10,7 @@ Social media button
 
 [![NPM][npm-icon]][npm-link]
 
-![alt text](image.png)
+![alt text](doc/image.png)
 
 ## Installation
 
@@ -33,32 +33,35 @@ This is the simplest case. Get the script in whatever way you prefer and include
   var player = videojs('my-video');
 
   player.socialMedia({
-     links: [
-       {
-         name: "facebook",
-         url: "http://www.guiarte.com/"
-       }, {
-         name: "twitter",
-         url: "http://www.guiarte.com/",
-         text: 'Miren este link',
-         hashtags: 'americatv,laranapepe',
-         via: 'americatv'
-       }, {
-         name: "linkedin",
-         url: "http://www.guiarte.com/",
-         title: 'Miren esta informacion',
-         summary: 'Descripcion de la nota'
-       },{
-         name: "gplus",
-         url: "http://www.guiarte.com/"
-       }, {
-         name: "tumblr",
-         url: "http://www.guiarte.com/",
-       }, {
-         name: "pinterest",
-         url: "http://www.guiarte.com/",
-         summary: 'Descripcion de la nota'
-       }]
+      facebook: {
+        url: "https://www.google.com/"
+      },
+      twitter: {
+        url: "https://www.google.com/",
+        text: 'Miren este link',
+        hashtags: 'americatv,laranapepe'
+      },
+      linkedin: {
+        url: "https://www.google.com/",
+        title: 'Miren esta informacion',
+        summary: 'Descripcion de la nota'
+      },
+      tumblr: {
+        url: "https://www.google.com/",
+      },
+      link: {
+        icon: 'link',
+        url: "https://www.google.com/",
+      },
+      pinterest: {
+        url: "https://www.google.com/",
+        summary: 'Descripcion de la nota'
+      },
+      custom: {
+        icon: 'coffee',
+        url: "https://www.google.com/",
+      }
+    }]
    });
 </script>
 ```
