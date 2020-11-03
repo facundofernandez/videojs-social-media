@@ -30,8 +30,9 @@ This is the simplest case. Get the script in whatever way you prefer and include
 <script src="//path/to/video.min.js"></script>
 <script src="//path/to/videojs-social-media.min.js"></script>
 <script>
-  var player = videojs('my-video');
+  const player = videojs('my-video');
 
+  // You can select an icon of the liberia "feather" (https://feathericons.com/)
   player.socialMedia({
       facebook: {
         url: "https://www.google.com/"
