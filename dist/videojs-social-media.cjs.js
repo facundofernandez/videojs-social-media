@@ -8,7 +8,7 @@ var videojs = _interopDefault(require('video.js'));
 var featherIcons = _interopDefault(require('feather-icons'));
 var _ = _interopDefault(require('lodash'));
 
-var version = "0.0.3";
+var version = "1.0.0";
 
 // Default options for the plugin.
 var defaults = {};

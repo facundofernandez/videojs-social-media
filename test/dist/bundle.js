@@ -58,7 +58,7 @@ if (typeof window !== "undefined") {
 
 var window_1 = win;
 
-var version = "0.0.3";
+var version = "1.0.0";
 
 var feather = createCommonjsModule(function (module, exports) {
 (function webpackUniversalModuleDefinition(root, factory) {
@@ -2448,7 +2448,7 @@ module.exports = __webpack_require__(/*! /home/travis/build/feathericons/feather
 
 /******/ });
 });
-//# sourceMappingURL=feather.js.map
+
 });
 
 var featherIcons = unwrapExports(feather);
