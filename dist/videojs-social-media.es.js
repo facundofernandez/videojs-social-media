@@ -4,7 +4,7 @@ import videojs from 'video.js';
 import featherIcons from 'feather-icons';
 import _ from 'lodash';
 
-var version = "1.0.0";
+var version = "1.0.1";
 
 // Default options for the plugin.
 var defaults = {};

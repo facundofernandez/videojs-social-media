@@ -10,7 +10,7 @@ Social media button
 
 [![NPM][npm-icon]][npm-link]
 
-![alt text](doc/image.png)
+![alt text](https://github.com/facundofernandez/videojs-social-media/blob/master/doc/image.png)
 
 ## Installation
 

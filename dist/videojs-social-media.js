@@ -1,6 +1,6 @@
 /**
  * videojs-social-media
- * @version 1.0.0
+ * @version 1.0.1
  * @copyright 2020 ff.fernandez.facundo <ff.fernandez.facundo@gmail.com>
  * @license Apache-2.0
  */
@@ -65,7 +65,7 @@ if (typeof window !== "undefined") {
 
 var window_1 = win;
 
-var version = "1.0.0";
+var version = "1.0.1";
 
 var feather = createCommonjsModule(function (module, exports) {
 (function webpackUniversalModuleDefinition(root, factory) {

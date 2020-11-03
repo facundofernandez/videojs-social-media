@@ -58,7 +58,7 @@ if (typeof window !== "undefined") {
 
 var window_1 = win;
 
-var version = "1.0.0";
+var version = "1.0.1";
 
 var feather = createCommonjsModule(function (module, exports) {
 (function webpackUniversalModuleDefinition(root, factory) {
