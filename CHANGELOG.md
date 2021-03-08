@@ -1,3 +1,7 @@
+<a name="1.1.0"></a>
+## [1.1.0](https://github.com/facundofernandez/videojs-social-media/compare/v1.0.1) (2021-03-08)
+* Configuration is fixed
+
 <a name="1.0.1"></a>
 ## [1.0.1](https://github.com/facundofernandez/videojs-social-media/compare/v1.0.1) (2020-11-02)
 * Configuration is fixed
