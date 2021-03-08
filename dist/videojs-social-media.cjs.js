@@ -6,7 +6,7 @@ var document = _interopDefault(require('global/document'));
 var window = _interopDefault(require('global/window'));
 var videojs = _interopDefault(require('video.js'));
 var featherIcons = _interopDefault(require('feather-icons'));
-var _ = _interopDefault(require('lodash'));
+var merge = _interopDefault(require('lodash/merge'));
 
 var version = "1.0.1";
 
@@ -89,7 +89,7 @@ var onPlayerReady = function onPlayerReady(player, options) {
 
     var socialType = _ref;
 
-    var opt = _.merge({ type: socialType }, options[socialType]);
+    var opt = merge({ type: socialType }, options[socialType]);
     createComponentSocial(opt);
   }
 

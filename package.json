@@ -69,12 +69,12 @@
     "test/"
   ],
   "dependencies": {
-    "feather-icons": "^4.28.0",
     "global": "^4.4.0",
     "lodash": "^4.17.20",
     "video.js": "^5.20.5"
   },
   "devDependencies": {
+    "feather-icons": "^4.28.0",
     "babel-plugin-external-helpers": "^6.22.0",
     "babel-plugin-transform-object-assign": "^6.8.0",
     "babel-preset-es2015": "^6.24.1",

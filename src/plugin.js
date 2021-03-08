@@ -3,7 +3,7 @@ import window from 'global/window';
 import videojs from 'video.js';
 import {version as VERSION} from '../package.json';
 import featherIcons from 'feather-icons';
-import _ from 'lodash'
+import merge from 'lodash/merge'
 
 // Default options for the plugin.
 const defaults = {};
@@ -72,7 +72,7 @@ const onPlayerReady = (player, options) => {
 
 
   for (const socialType of Object.keys(options)) {
-    const opt = _.merge({type:socialType}, options[socialType] )
+    const opt = merge({type:socialType}, options[socialType] )
     createComponentSocial(opt)
   }
 

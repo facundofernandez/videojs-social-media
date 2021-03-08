@@ -2,7 +2,7 @@ import document from 'global/document';
 import window from 'global/window';
 import videojs from 'video.js';
 import featherIcons from 'feather-icons';
-import _ from 'lodash';
+import merge from 'lodash/merge';
 
 var version = "1.0.1";
 
@@ -85,7 +85,7 @@ var onPlayerReady = function onPlayerReady(player, options) {
 
     var socialType = _ref;
 
-    var opt = _.merge({ type: socialType }, options[socialType]);
+    var opt = merge({ type: socialType }, options[socialType]);
     createComponentSocial(opt);
   }
 
